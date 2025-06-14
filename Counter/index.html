@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <h2 id="num" >0</h2>
+    <button id="min" class="py-5 px-4 shadow rounded-lg">-</button>
+    <button id="res" class="py-5 px-4 shadow rounded-lg">Reset</button>
+    <button id="add" class="py-5 px-4 shadow rounded-lg">+</button>
+    
+    <script>
+        const minus=document.getElementById("min");
+        const reset=document.getElementById("res");
+        const add=document.getElementById("add");
+        const num=document.getElementById("num");
+
+        // minus.addEventListener("click",()=>{
+        //     num.textContent=num.textContent-1;
+        //     
+        // })
+        // add.addEventListener("click",()=>{
+        //     num.textContent=parseInt(num.textContent)+1;
+        // })
+        let id
+        
+        minus.addEventListener("click",()=>{
+          id =setInterval(() => {
+            num.textContent=num.textContent-1;
+          }, 1000);
+          
+        })
+        add.addEventListener("click",()=>{
+          setTimeout(() => {
+            num.textContent=parseInt(num.textContent)+1;
+          }, 1000);
+          
+            
+        })
+        reset.addEventListener("click",()=>{
+          
+          //num.textContent=0;
+          clearInterval(id)
+      })
+    </script>
+</body>
+<!-- <body> -->
+    <!-- <div class="2xl:container ">
+        <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div class="bg-red-200 flex flex-row justify-between item-center px-3">
+                <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1000 1231.051"
+                        width="3em"
+                        height="3em"
+                        
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M1231.051 118.453q-51.422 76.487-126.173 130.403q.738 14.46.738 32.687q0 101.273-29.53 202.791q-29.53 101.519-90.215 194.343T841.297 843.145T639.62 957.395t-252.474 42.606q-210.2 0-387.147-113.493q31.406 3.495 60.242 3.495q175.605 0 313.687-108.177q-81.877-1.501-146.654-50.409q-64.777-48.907-89.156-124.988q24.097 4.59 47.566 4.59q33.782 0 66.482-8.812q-87.378-17.5-144.975-87.04q-57.595-69.539-57.595-160.523v-3.126q53.633 29.696 114.416 31.592q-51.762-34.508-82.079-89.999q-30.319-55.491-30.319-120.102q0-68.143 34.151-126.908q95.022 116.607 230.278 186.392q135.258 69.786 290.212 77.514q-6.609-27.543-6.621-57.485q0-104.546 73.994-178.534Q747.623 0 852.169 0q109.456 0 184.392 79.711q85.618-16.959 160.333-61.349q-28.785 90.59-110.933 139.768q75.502-8.972 145.088-39.677z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                    <div class="md:hidden" id="menu">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width="2em"
+                            height="2em"
+                            
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
+                            ></path>
+                          </svg>
+                    </div>
+                    <div id="cross" class="hidden">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                width="2em"
+                                height="2em"
+                        
+                              >
+                                <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
+                                  <path d="M5.47 5.47a.75.75 0 0 1 1.06 0l12 12a.75.75 0 1 1-1.06 1.06l-12-12a.75.75 0 0 1 0-1.06"></path>
+                                  <path d="M18.53 5.47a.75.75 0 0 1 0 1.06l-12 12a.75.75 0 0 1-1.06-1.06l12-12a.75.75 0 0 1 1.06 0"></path>
+                                </g>
+                              </svg>
+                    </div> 
+            </div>
+            </div>
+            <div id="nav" class="hidden md:block text-[20px] bg-blue-200 flex flex-col justify-center item-center md:flex-row md:justify-end item-center gap-5 px-3">
+                <ul class="flex flex-col justify-center item-center md:flex-row md:justify-end item-center gap-5 px-3">
+                <li id="home">Home</li>
+                <li>About</li>
+                <li>Service</li>
+                <li>Contact</li>  
+            </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const menu =document.getElementById("menu")
+        const cross=document.getElementById("cross")
+        const nav=document.getElementById("nav")
+        menu.addEventListener("click",()=>{
+            cross.classList.remove("hidden")
+            menu.classList.add("hidden")
+            nav.classList.remove("hidden")
+        })
+        cross.addEventListener("click",()=>{
+            cross.classList.add("hidden")
+            menu.classList.remove("hidden")
+            nav.classList.add("hidden")
+        })
+        home.addEventListener("click",()=>{
+            cross.classList.add("hidden")
+            menu.classList.remove("hidden")
+            nav.classList.add("hidden")
+        })
+    </script>
+</body> -->
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT|BULB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="bg" class="bg-black min-h-screen flex items-center justify-center">
+    <div class="text-center">
+    <img id="light1" class="p-3 h-[200px] w-[200px]" src="https://ik.imagekit.io/abinaya/MERN/bulb-go-on-img.png">
+    <img id="cat1" class="p-3 h-[200px] w-[200px]" src="https://ik.imagekit.io/abinaya/MERN/cat-img.png">
+
+    <div class="bg-slate-300 w-[150px] shadow rounded-lg ml-4">
+    <h2 id="switch" class="py-3 pl-2 text-[20px]">Switched On</h2>
+    <div class="p-1 pb-3">
+    <button id="offele" class="text-white bg-red-500 rounded-lg py-3 px-5">OFF</button>
+    <button id="onele" class="text-white bg-slate-500 rounded-lg py-3 px-5">ON</button>
+    </div>
+    </div>
+
+    <script>
+        const bulb=document.getElementById("light1")
+        const bgcolor=document.getElementById("bg")
+        const cat1=document.getElementById("cat1")
+        const swi=document.getElementById("switch")
+        const off=document.getElementById("offele")
+        const on=document.getElementById("onele")
+
+        offele.addEventListener("click",()=>{
+            bulb.src="https://ik.imagekit.io/abinaya/MERN/bulb-go-off-img.png"
+            cat1.src="https://ik.imagekit.io/abinaya/MERN/cat-eyes-img.png"
+            swi.textContent="Switched Off"
+            on.classList.remove("bg-green-500")
+    on.classList.add("bg-slate-500")
+    
+    off.classList.remove("bg-slate-500")
+    off.classList.add("bg-red-500")
+           
+        })
+        onele.addEventListener("click",()=>{
+            bulb.src="https://ik.imagekit.io/abinaya/MERN/bulb-go-on-img.png"
+            cat1.src="https://ik.imagekit.io/abinaya/MERN/cat-img.png"
+            swi.textContent="Switch On"
+            off.classList.remove("bg-red-500")
+    off.classList.add("bg-slate-500")
+    
+    on.classList.remove("bg-slate-500")
+    on.classList.add("bg-green-500")
+         
+        })
+
+    </script>
+</div>
+</body>
+</html>

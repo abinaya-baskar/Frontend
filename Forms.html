@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Validation</title>
+  <!-- Firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+  <form id="form">
+    <label>Email</label>
+    <input type="email" id="email" required><br>
+    <p id="mailerr" style="color:red;"></p>
+
+    <label>Password</label>
+    <input type="password" id="pass" required><br>
+    <p id="passerr" style="color:red;"></p>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("form");
+    const email = document.getElementById("email");
+    const pass = document.getElementById("pass");
+    const emailerr = document.getElementById("mailerr");
+    const passerr = document.getElementById("passerr");
+
+    function validate(email, pass) {
+      const emailRegex = /^[a-z0-9]{1,30}(\.[a-z0-9]{1,30})?@[a-z]{3,5}\.[a-z]{2,3}$/;
+      const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%&!]).{6,15}$/;
+
+      let retEmail = true;
+      let retPass = true;
+
+      emailerr.textContent = "";
+      passerr.textContent = "";
+
+      if (!emailRegex.test(email)) {
+        emailerr.textContent = "Please enter a valid Email!";
+        retEmail = false;
+      }
+
+      if (!passRegex.test(pass)) {
+        passerr.textContent = "Password must contain A-Z, a-z, 0-9, special char and 6-15 chars!";
+        retPass = false;
+      }
+
+      return retEmail && retPass;
+    }
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB3yKta5l2QSzn057hBdA30yS0R2DdLPWY",
+      authDomain: "form-validation-mern.firebaseapp.com",
+      databaseURL: "https://form-validation-mern-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "form-validation-mern",
+      storageBucket: "form-validation-mern.appspot.com",
+      messagingSenderId: "99662394542",
+      appId: "1:99662394542:web:a82a2b5f4fd5637182293f"
+    };
+
+    // Initialize Firebase once
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+    function saveData(email, pass) {
+      const db = firebase.database().ref("Registration");
+      db.push({ email: email, password: pass });
+      form.reset();
+      alert("Data saved to Firebase successfully!");
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const res = validate(email.value, pass.value);
+      if (res) {
+        saveData(email.value, pass.value);
+      }
+    });
+  </script>
+</body>
+</html>

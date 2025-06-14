@@ -1,0 +1,94 @@
+1. What is JavaScript?  
+	 JavaScript is a versatile and powerful programming language that is commonly used in web development. It allows developers to create interactive and dynamic web pages by adding functionality to the HTML and CSS elements. JavaScript can be used to update content, control multimedia, animate images, and much more. It is executed on the client side (in the user's web browser) and can interact with the Document Object Model (DOM) to manipulate web page elements.   
+
+2.Variables and Types:
+
+let userAge=20
+let userName= "Abinaya"
+console.log(userAge)
+console.log(userName)
+
+3.Comments in JavaScript:
+	/*
+Functions allow you to break down complex problems into smaller, more manageable parts. Each function can handle a specific task, making the code easier to read, understand, and maintain.
+*/
+
+4.Operation:
+
+let num1=5;
+let num2=3;
+add(num1, num2)
+sub(num1, num2)
+multi(num1, num2)
+div(num1, num2)
+function add(){
+    console.log(num1+ num2)
+}
+function sub(){
+    console.log(num1- num2)
+}
+function multi(){
+    console.log(num1* num2)
+}
+function div(){
+    console.log(num1/num2)
+}
+
+5.Data Types:
+String: It's a sequence of characters enclosed in single, double quotes.
+let a = "Hello, World!"
+
+Number: A number represents both integer and floating-point values.
+let age = 25;
+let pi = 3.14159;
+
+Boolean: A boolean represents logical values: true or false.
+let isStudent = true;
+let hasGraduated = false;
+
+Array: An array is a collection of elements, which can be of any data type.
+
+let Array = ["hello", 42, true];
+
+6.Functions in JavaScript:
+    function greetUser(name){
+    console.log("Hi "+name)
+}
+greetUser("Abinaya")
+
+7.if Else in JavaScript:
+
+let temperature=50
+if(temperature>30){
+    console.log("Temperature is greater than 30 degree")
+}
+else{
+    console.log("Temperature is not greater than 30 degree")
+}
+
+8.FOR LOOP:
+
+for(let i=1;i<=5;i++){
+    console.log(i)
+}
+
+9.Loose vs Strict Equality:
+
+Loose Equality (==):
+Loose equality compares two values for equality, after converting both values to a common type if they are of different types. This process is known as type coercion.
+
+Example:
+let a = 5;
+let b = "5";
+
+console.log(a == b); // true
+
+
+Strict Equality (===):
+Strict equality compares two values for equality without converting them to a common type. It only returns true if the values are of the same type and have the same value.
+
+Example:
+let a = 5;
+let b = "5";
+
+console.log(a === b); // false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
